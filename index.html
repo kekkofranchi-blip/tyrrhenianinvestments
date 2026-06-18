@@ -120,17 +120,66 @@
       </button>
     </nav>
 
-    <!-- Mobile menu overlay -->
-    <div id="mobile-menu"
-         class="pointer-events-none fixed inset-0 z-[55] flex translate-y-[-8px] flex-col items-center justify-center gap-2 bg-white/95 opacity-0 backdrop-blur-xl transition-all duration-300 ease-in-out md:hidden">
-      <a href="#home"        class="mobile-link font-display text-2xl font-bold tracking-tight text-navy py-3 transition-colors duration-300 hover:text-cyan">Home</a>
-      <a href="#performance" class="mobile-link font-display text-2xl font-bold tracking-tight text-navy py-3 transition-colors duration-300 hover:text-cyan">Portfolio &amp; Performance</a>
-      <a href="#strategy"    class="mobile-link font-display text-2xl font-bold tracking-tight text-navy py-3 transition-colors duration-300 hover:text-cyan">Strategy</a>
-      <a href="#portfolio"   class="mobile-link font-display text-2xl font-bold tracking-tight text-navy py-3 transition-colors duration-300 hover:text-cyan">Portfolio</a>
-      <a href="#team"        class="mobile-link font-display text-2xl font-bold tracking-tight text-navy py-3 transition-colors duration-300 hover:text-cyan">Team</a>
-      <a href="#about"       class="mobile-link font-display text-2xl font-bold tracking-tight text-navy py-3 transition-colors duration-300 hover:text-cyan">About</a>
-    </div>
   </header>
+
+  <!-- ============================================================
+       MOBILE FULL-SCREEN MENU — placed outside <header> so that
+       the header's backdrop-filter does not trap fixed positioning
+  ============================================================= -->
+  <div id="mobile-menu"
+       role="dialog"
+       aria-modal="true"
+       aria-label="Navigation"
+       class="pointer-events-none fixed inset-0 z-[60] flex translate-y-[-8px] flex-col bg-navy opacity-0 transition-all duration-300 ease-in-out md:hidden">
+
+    <!-- Top bar: brand + close button -->
+    <div class="flex shrink-0 items-center justify-between border-b border-white/10 px-6 py-5">
+      <a href="#home"
+         class="mobile-link font-display text-xl font-extrabold tracking-tight text-white transition-colors duration-300 hover:text-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan rounded-sm">
+        Tyrrhenian<span class="text-cyan">.</span>
+      </a>
+      <button id="menu-close"
+              aria-label="Close menu"
+              class="flex h-10 w-10 items-center justify-center rounded-lg text-white/60 transition-colors duration-300 hover:bg-white/10 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan">
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Nav links — vertically centered in remaining space -->
+    <nav class="flex flex-1 flex-col items-stretch justify-center" aria-label="Mobile navigation">
+      <a href="#home"        class="mobile-link group flex items-center justify-between border-b border-white/8 px-8 py-5 font-display text-2xl font-bold tracking-tight text-white transition-colors duration-300 hover:text-cyan focus:outline-none focus-visible:ring-inset focus-visible:ring-2 focus-visible:ring-cyan">
+        Home
+        <svg class="h-4 w-4 text-white/25 transition-colors duration-300 group-hover:text-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#performance" class="mobile-link group flex items-center justify-between border-b border-white/8 px-8 py-5 font-display text-2xl font-bold tracking-tight text-white transition-colors duration-300 hover:text-cyan focus:outline-none focus-visible:ring-inset focus-visible:ring-2 focus-visible:ring-cyan">
+        Portfolio &amp; Performance
+        <svg class="h-4 w-4 text-white/25 transition-colors duration-300 group-hover:text-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#strategy"    class="mobile-link group flex items-center justify-between border-b border-white/8 px-8 py-5 font-display text-2xl font-bold tracking-tight text-white transition-colors duration-300 hover:text-cyan focus:outline-none focus-visible:ring-inset focus-visible:ring-2 focus-visible:ring-cyan">
+        Strategy
+        <svg class="h-4 w-4 text-white/25 transition-colors duration-300 group-hover:text-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#portfolio"   class="mobile-link group flex items-center justify-between border-b border-white/8 px-8 py-5 font-display text-2xl font-bold tracking-tight text-white transition-colors duration-300 hover:text-cyan focus:outline-none focus-visible:ring-inset focus-visible:ring-2 focus-visible:ring-cyan">
+        Portfolio
+        <svg class="h-4 w-4 text-white/25 transition-colors duration-300 group-hover:text-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#team"        class="mobile-link group flex items-center justify-between border-b border-white/8 px-8 py-5 font-display text-2xl font-bold tracking-tight text-white transition-colors duration-300 hover:text-cyan focus:outline-none focus-visible:ring-inset focus-visible:ring-2 focus-visible:ring-cyan">
+        Team
+        <svg class="h-4 w-4 text-white/25 transition-colors duration-300 group-hover:text-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#about"       class="mobile-link group flex items-center justify-between px-8 py-5 font-display text-2xl font-bold tracking-tight text-white transition-colors duration-300 hover:text-cyan focus:outline-none focus-visible:ring-inset focus-visible:ring-2 focus-visible:ring-cyan">
+        About
+        <svg class="h-4 w-4 text-white/25 transition-colors duration-300 group-hover:text-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </a>
+    </nav>
+
+    <!-- Footer strip -->
+    <div class="shrink-0 border-t border-white/10 px-8 py-5">
+      <p class="text-xs font-medium uppercase tracking-[0.22em] text-white/30">London · United Kingdom</p>
+    </div>
+  </div>
 
   <main>
 
@@ -705,6 +754,7 @@
       }
       setMenu(false);
       toggle.addEventListener('click', () => setMenu(!open));
+      document.getElementById('menu-close').addEventListener('click', () => setMenu(false));
       menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
       window.addEventListener('keydown', e => { if (e.key === 'Escape' && open) setMenu(false); });
 
