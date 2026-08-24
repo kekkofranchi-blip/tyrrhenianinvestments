@@ -265,17 +265,22 @@
         <!-- Single high-contrast metric -->
         <div class="reveal mt-14 flex justify-start">
           <div class="lift-card inline-flex flex-col gap-4 px-10 py-9 sm:px-14 sm:py-12">
-            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-navy/50">Annualised Return</p>
+            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-navy/50">Since-Inception Return</p>
             <p class="font-display text-6xl font-extrabold tracking-tight sm:text-7xl">
-              <span class="metric" data-target="11.50" data-decimals="2">0</span><span class="text-cyan">%</span>
+              <span class="metric" data-target="17.43" data-decimals="2">0</span><span class="text-cyan">%</span>
             </p>
             <p class="text-sm leading-relaxed text-navy/50">
-              Track record reflects performance to date under current strategies.
+              Cumulative return since inception (6 Oct 2025), calculated using the Modified Dietz
+              method. Unaudited; performance data sourced from Trading&nbsp;212. As of 24 Aug 2026.
             </p>
           </div>
         </div>
 
-        <!-- Growth chart -->
+        <!--
+          Growth chart — temporarily disabled.
+          Do NOT re-enable with placeholder data alongside a real percentage figure.
+          Restore only once an automated daily NAV tracker is in place and feeding real data points.
+
         <div class="reveal mt-12 rounded-2xl border border-navy/10 bg-mist p-6 shadow-card sm:p-10">
           <div class="mb-8 flex flex-wrap items-center justify-between gap-4">
             <div>
@@ -295,7 +300,6 @@
                 <stop offset="100%" stop-color="#00B4D8" stop-opacity="0"/>
               </linearGradient>
             </defs>
-            <!-- horizontal gridlines + y labels -->
             <g stroke="#0A192F" stroke-opacity=".07" stroke-width="1" stroke-dasharray="2 4">
               <line x1="60" y1="30"  x2="780" y2="30"/>
               <line x1="60" y1="90"  x2="780" y2="90"/>
@@ -317,7 +321,6 @@
               <text x="600" y="285">Q4</text>
               <text x="780" y="285">Current</text>
             </g>
-            <!-- portfolio area + line (animated) -->
             <path id="growth-area"
                   d="M60,250 C120,248 160,244 210,236 C270,226 310,230 380,210 C450,190 500,195 560,175 C620,155 690,140 780,98 L780,258 L60,258 Z"
                   fill="url(#area-fill)" opacity="0"/>
@@ -333,6 +336,7 @@
             Figures and chart shown reflect illustrative trend data. Past performance is not indicative of future results.
           </p>
         </div>
+        -->
       </div>
     </section>
 
