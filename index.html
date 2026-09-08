@@ -411,19 +411,8 @@
         <!-- ── Active holdings grid ── -->
         <div class="mt-14 grid grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl">
 
-          <!-- Bank of Georgia -->
-          <div class="reveal group flex flex-col items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-cyan/40 hover:bg-white/10 hover:shadow-[0_8px_32px_-8px_rgba(0,180,216,.25)]">
-            <div class="flex h-20 w-full items-center justify-center rounded-xl bg-white p-4">
-              <img src="bank-of-georgia-logo.png" alt="Bank of Georgia Logo" class="h-12 w-full object-contain" loading="lazy" />
-            </div>
-            <div class="text-center">
-              <p class="font-display text-sm font-semibold text-white">Bank of Georgia</p>
-              <p class="mt-0.5 text-[11px] uppercase tracking-wide text-navy-100/50">LSE · BGEO</p>
-            </div>
-          </div>
-
           <!-- MS International -->
-          <div class="reveal reveal-delay-1 group flex flex-col items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-cyan/40 hover:bg-white/10 hover:shadow-[0_8px_32px_-8px_rgba(0,180,216,.25)]">
+          <div class="reveal group flex flex-col items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-cyan/40 hover:bg-white/10 hover:shadow-[0_8px_32px_-8px_rgba(0,180,216,.25)]">
             <div class="flex h-20 w-full items-center justify-center rounded-xl bg-white p-4">
               <img src="ms-international-plc-logo.png" alt="MS International PLC Logo" class="h-12 w-full object-contain" loading="lazy" />
             </div>
@@ -434,13 +423,24 @@
           </div>
 
           <!-- Rigetti Computing -->
-          <div class="reveal reveal-delay-2 group flex flex-col items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-cyan/40 hover:bg-white/10 hover:shadow-[0_8px_32px_-8px_rgba(0,180,216,.25)]">
+          <div class="reveal reveal-delay-1 group flex flex-col items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-cyan/40 hover:bg-white/10 hover:shadow-[0_8px_32px_-8px_rgba(0,180,216,.25)]">
             <div class="flex h-20 w-full items-center justify-center rounded-xl bg-white p-4">
               <img src="Rigetti-Logo.png" alt="Rigetti Computing Logo" class="h-12 w-full object-contain" loading="lazy" />
             </div>
             <div class="text-center">
               <p class="font-display text-sm font-semibold text-white">Rigetti Computing</p>
               <p class="mt-0.5 text-[11px] uppercase tracking-wide text-navy-100/50">NASDAQ · RGTI</p>
+            </div>
+          </div>
+
+          <!-- Alcoa Corp -->
+          <div class="reveal reveal-delay-2 group flex flex-col items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-cyan/40 hover:bg-white/10 hover:shadow-[0_8px_32px_-8px_rgba(0,180,216,.25)]">
+            <div class="flex h-20 w-full items-center justify-center rounded-xl bg-white p-4">
+              <img src="Alcoa-Logo.jpg" alt="Alcoa Corp Logo" class="object-contain h-12 w-full" loading="lazy" />
+            </div>
+            <div class="text-center">
+              <p class="font-display text-sm font-semibold text-white">Alcoa Corp</p>
+              <p class="mt-0.5 text-[11px] uppercase tracking-wide text-navy-100/50">NYSE · AA</p>
             </div>
           </div>
 
@@ -470,7 +470,19 @@
                class="w-full overflow-hidden"
                style="max-height: 0; opacity: 0; transition: max-height 500ms ease-in-out, opacity 400ms ease-in-out;">
 
-            <div class="mt-10 grid grid-cols-2 gap-5 sm:grid-cols-4">
+            <div class="mt-10 grid grid-cols-2 gap-5 sm:grid-cols-3 xl:grid-cols-5">
+
+              <!-- BGEO Group -->
+              <div class="group flex flex-col items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-cyan/40 hover:bg-white/10 hover:shadow-[0_8px_32px_-8px_rgba(0,180,216,.25)]">
+                <div class="flex h-20 w-full items-center justify-center rounded-xl bg-white p-4">
+                  <img src="bank-of-georgia-logo.png" alt="BGEO Group Logo" class="object-contain h-12 w-full" loading="lazy" />
+                </div>
+                <div class="text-center">
+                  <p class="font-display text-sm font-semibold text-white">BGEO Group</p>
+                  <p class="mt-0.5 text-[11px] uppercase tracking-wide text-navy-100/50">LSE · BGEO</p>
+                  <span class="mt-2 inline-block rounded-full bg-cyan/15 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-cyan-soft">Closed</span>
+                </div>
+              </div>
 
               <!-- Victoria Plumbing -->
               <div class="group flex flex-col items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-cyan/40 hover:bg-white/10 hover:shadow-[0_8px_32px_-8px_rgba(0,180,216,.25)]">
@@ -824,30 +836,32 @@
       }, { threshold: 0.6 });
       document.querySelectorAll('.metric').forEach(el => metricObs.observe(el));
 
-      /* —— Chart line draw animation —— */
+      /* —— Chart line draw animation (skipped — chart disabled until real NAV data available) —— */
       const line = document.getElementById('growth-line');
-      const area = document.getElementById('growth-area');
-      const dot  = document.getElementById('growth-dot');
-      const len  = line.getTotalLength();
-      if (!reduceMotion) {
-        line.style.strokeDasharray = len;
-        line.style.strokeDashoffset = len;
+      if (line) {
+        const area = document.getElementById('growth-area');
+        const dot  = document.getElementById('growth-dot');
+        const len  = line.getTotalLength();
+        if (!reduceMotion) {
+          line.style.strokeDasharray = len;
+          line.style.strokeDashoffset = len;
+        }
+        const chartObs = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            if (!reduceMotion) {
+              line.style.transition = 'stroke-dashoffset 2.2s cubic-bezier(.4,0,.2,1)';
+              line.style.strokeDashoffset = '0';
+            }
+            area.style.transition = 'opacity 1.2s ease-out 1s';
+            area.style.opacity = '1';
+            dot.style.transition = 'opacity .5s ease-out 2s';
+            dot.style.opacity = '1';
+            chartObs.unobserve(entry.target);
+          });
+        }, { threshold: 0.35 });
+        chartObs.observe(document.getElementById('growth-chart'));
       }
-      const chartObs = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) return;
-          if (!reduceMotion) {
-            line.style.transition = 'stroke-dashoffset 2.2s cubic-bezier(.4,0,.2,1)';
-            line.style.strokeDashoffset = '0';
-          }
-          area.style.transition = 'opacity 1.2s ease-out 1s';
-          area.style.opacity = '1';
-          dot.style.transition = 'opacity .5s ease-out 2s';
-          dot.style.opacity = '1';
-          chartObs.unobserve(entry.target);
-        });
-      }, { threshold: 0.35 });
-      chartObs.observe(document.getElementById('growth-chart'));
 
       /* —— Closed Positions accordion —— */
       const closedToggle  = document.getElementById('closed-toggle');
@@ -859,16 +873,18 @@
         closedOpen = !closedOpen;
         closedToggle.setAttribute('aria-expanded', String(closedOpen));
         if (closedOpen) {
-          // Expand: measure true scroll height so transition lands exactly right
+          // Expand: set to full scroll height so CSS transition runs
           closedPanel.style.maxHeight = closedPanel.scrollHeight + 'px';
           closedPanel.style.opacity  = '1';
         } else {
-          // Collapse: first lock to current height, then animate to 0
-          closedPanel.style.maxHeight = closedPanel.scrollHeight + 'px';
-          requestAnimationFrame(() => {
+          // Collapse: lock to current rendered height first, then in the NEXT
+          // paint frame (double-rAF) animate to 0 so the browser never
+          // coalesces the two assignments into a single no-op style flush.
+          closedPanel.style.maxHeight = closedPanel.offsetHeight + 'px';
+          requestAnimationFrame(() => requestAnimationFrame(() => {
             closedPanel.style.maxHeight = '0';
             closedPanel.style.opacity  = '0';
-          });
+          }));
         }
         closedChevron.style.transform = closedOpen ? 'rotate(180deg)' : 'rotate(0deg)';
       });
